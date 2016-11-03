@@ -1,0 +1,18 @@
+{
+  "name": "moze",
+  "version": "0.1.0",
+  "description": "A dead simple expressjs middleware for authorizing users with a list of activities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "expressjs",
+    "authorization",
+    "activity",
+    "middleware"
+  ],
+  "author": "PMCtire Inc",
+  "license": "Apache-2.0"
+}
