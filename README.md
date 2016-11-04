@@ -26,7 +26,7 @@ const moze = require('moze');
 
 ### Initialize it
 
-You need to add `moze.init(...)` to your middlewares. Make sur that you add it
+You need to add `moze.init(...)` to your middlewares. Make sure that you add it
 before you start using it to protect your resources.
 
 `moze.init(...)` takes a function as an argument. This function takes a
