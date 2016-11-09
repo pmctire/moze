@@ -1,14 +1,8 @@
 Moze
 ====
 
-A dead simple expressjs middleware for authorizing users with a list of
-activities. It lets you easily define what routes your users are allowed to
-access.
-
-Moze defines the concept of an activity. An activity relates to both users and
-routes. A user can perform activities and routes are part of one or more
-activities. A user can access a route if one of activities a route is part of
-is also one of the activities the user can perform.
+A dead simple expressjs middleware for doing activity based authorization.
+It lets you easily define what routes your users are allowed to access.
 
 Usage
 -----
