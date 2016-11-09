@@ -6,6 +6,11 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test istanbul cover _mocha -- -r test/test_helper.js -R spec"
   },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "index.js"
+  ],
   "keywords": [
     "express",
     "expressjs",
