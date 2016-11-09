@@ -4,50 +4,70 @@ Moze
 A dead simple expressjs middleware for doing activity based authorization.
 It lets you easily define what routes your users are allowed to access.
 
-Usage
------
-
-### Install it
+Installation
+------------
 
 ```sh
 npm install --save moze
 ```
 
-### Require it
+Usage
+-----
 
 ```js
-const moze = require('moze');
-```
+var express = require('express');
+var moze = require('moze');
 
-### Initialize it
+var app = express();
 
-You need to add `moze.init(...)` to your middlewares. Make sure that you add it
-before you start using it to protect your resources.
+// ...
 
-`moze.init(...)` takes a function as an argument. This function takes a
-request and returns an array of activities that the user is allowed to
-performed.
-
-```js
+// Here we tell moze about the activities the current user is allowed to perform
 app.use(moze.init(function(req) {
-  // extract the allowed activities for the user from the request
+  // For this example, we assume that our authentication middleware defines the
+  // req.user object which holds an array of the activities that the user is
+  // allowed perform.
   return req.user.allowedActivities;
-}));
-```
+}))
 
-### Protect your resources
+// ...
 
-When you want to add authorization to one of your routes, just add
-`moze.may(...)` to the middlewares for the route. Pass the allowed activities
-for that route as arguments.
+// routes
+app.get('/posts',
+  authenticate, // some authentication middleware
+  moze.may('browse blog'),
+  getBlogAllPosts // handler
+);
 
-```js
-app.get('/protected/resource',
-  someAuthenticationMiddleware,
-  // both users who can view protected things and users who can manage them
-  // should have access to this route
-  moze.may('view protected things', 'manage protected things'),
-  yourHandler);
+app.post('/posts',
+  authenticate, // some authentication middleware
+  moze.may('write blog posts'),
+  createBlogPost // handler
+);
+
+app.get('/posts/:id',
+  authenticate, // some authentication middleware
+  moze.may('browse blog', 'write blog posts'),
+  getBlogPost // handler
+);
+
+app.put('/posts/:id',
+  authenticate, // some authentication middleware
+  moze.may('write blog posts'),
+  editBlogPost // handler
+);
+
+app.get('/posts/:id/comments',
+  authenticate, // some authentication middleware
+  moze.may('browse blog'),
+  getBlogPostComments // handler
+);
+
+app.post('/posts/:id/comments',
+  authenticate, // some authentication middleware
+  moze.may('write comments'),
+  createComment // handler
+);
 ```
 
 Development
