@@ -26,7 +26,8 @@ var app = express();
 
 // ...
 
-// Here we tell moze about the activities the current user is allowed to perform
+// Initialize moze. We specify how to get the activities the
+// current user is allowed to perform.
 app.use(moze.init(function(req) {
   // For this example, we assume that our authentication middleware defines the
   // req.user object which holds an array of the activities that the user is
