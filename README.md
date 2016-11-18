@@ -1,8 +1,8 @@
 Moze
 ====
 
-A dead simple expressjs middleware for doing activity based authorization.
-It lets you easily define what routes your users are allowed to access.
+A dead simple expressjs middleware for activity based authorization. It lets you
+easily define what routes your users are allowed to access.
 
 Moze is an __authorization__ middleware. This is not the same thing as
 authentication. If you're looking for an authentication middleware, we recommend

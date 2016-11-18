@@ -1,7 +1,7 @@
 {
   "name": "moze",
   "version": "0.1.0",
-  "description": "A dead simple expressjs middleware for authorizing users with a list of activities.",
+  "description": "A dead simple expressjs middleware for activity based authorization",
   "main": "index.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test istanbul cover _mocha -- -r test/test_helper.js -R spec"
