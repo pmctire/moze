@@ -2,6 +2,7 @@ Moze
 ====
 
 [![Build Status](https://travis-ci.org/pmctire/moze.svg?branch=master)](https://travis-ci.org/pmctire/moze)
+[![Dependency Status](https://gemnasium.com/badges/github.com/pmctire/moze.svg)](https://gemnasium.com/github.com/pmctire/moze)
 
 A dead simple expressjs middleware for activity based authorization. It lets you
 easily define what routes your users are allowed to access.
